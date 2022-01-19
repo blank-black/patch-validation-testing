@@ -1,0 +1,22 @@
+Error: memory error: out of bound pointer on the concrete path
+After 1.26983s
+SE started at depth/instruction 0
+Current depth 0
+Current instructions 1400653
+Current searcherdistance 0
+Current TTL 0
+File: /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/string/strlen.c
+Line: 22
+Stack: 
+	#0 00027849 in strlen (s=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/string/strlen.c:22
+	#1 00026910 in realpath (path=45957936, got_path=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/stdlib/realpath.c:87
+	#2 00052343 in canonicalize_file_name (name=45957936) at /home/shadowvm/shadow/klee-change/runtime/POSIX/stubs.c:266
+	#3 00004293 in get_point (point=45957936, statp=58600816)
+	#4 00004778 in get_entry (name=45957936, statp=58600816)
+	#5 00005663 in __user_main (argc=3, argv=50222640)
+	#6 00022706 in __uClibc_main (main=32591184, argc=3, argv=50222640, app_init=0, app_fini=0, rtld_fini=0, stack_end=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+	#7 00040048 in main (=3, =50222640)
+Info: 
+	address: 0
+	next: object at 37405248 of size 131
+		MO9[131] allocated at main():  call void @__uClibc_main(i32 (i32, i8**, i8**)* bitcast (i32 (i32, i8**)* @__user_main to i32 (i32, i8**, i8**)*), i32 %0, i8** %1, void ()* null, void ()* null, void ()* null, i8* null)

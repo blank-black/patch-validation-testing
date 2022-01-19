@@ -1,0 +1,22 @@
+Error: memory error: out of bound pointer on the concrete path
+After 1.21896s
+SE started at depth/instruction 0
+Current depth 0
+Current instructions 1400475
+Current searcherdistance 0
+Current TTL 0
+File: /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/string/strlen.c
+Line: 22
+Stack: 
+	#0 00027849 in strlen (s=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/string/strlen.c:22
+	#1 00026910 in realpath (path=55208464, got_path=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/stdlib/realpath.c:87
+	#2 00052343 in canonicalize_file_name (name=55208464) at /home/shadowvm/shadow/klee-change/runtime/POSIX/stubs.c:266
+	#3 00004293 in get_point (point=55208464, statp=74263840)
+	#4 00004778 in get_entry (name=55208464, statp=74263840)
+	#5 00005663 in __user_main (argc=4, argv=55205824)
+	#6 00022706 in __uClibc_main (main=47209808, argc=4, argv=55205824, app_init=0, app_fini=0, rtld_fini=0, stack_end=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+	#7 00040048 in main (=4, =55205824)
+Info: 
+	address: 0
+	next: object at 47386208 of size 593
+		MO464[593] allocated at global:.str6283

@@ -1,0 +1,50 @@
+array argv[14] : w32 -> w8 = symbolic
+array argv_1[2] : w32 -> w8 = symbolic
+array .-stat[144] : w32 -> w8 = symbolic
+array exp-stat[144] : w32 -> w8 = symbolic
+array argv_2[4] : w32 -> w8 = symbolic
+(query [(Eq 0 (Read w8 13 argv))
+        (Eq 0 (Read w8 1 argv_1))
+        (Eq 46 (Read w8 0 argv_1))
+        (Eq 4096
+            (ReadLSB w64 56 .-stat))
+        (Eq 9324607
+            (ReadLSB w64 8 .-stat))
+        (Eq 4096
+            (ReadLSB w64 48 .-stat))
+        (Eq 0 (Read w8 3 argv_2))
+        (Eq 101 (Read w8 0 argv_2))
+        (Eq 120 (Read w8 1 argv_2))
+        (Eq 112 (Read w8 2 argv_2))
+        (Eq 4096
+            (ReadLSB w64 56 exp-stat))
+        (Eq 9324608
+            (ReadLSB w64 8 exp-stat))
+        (Eq 6
+            (ReadLSB w64 48 exp-stat))
+        (Eq 45 (Read w8 0 argv))
+        (Eq 45 (Read w8 1 argv))
+        (Eq 61 (Read w8 8 argv))
+        (Eq 111 (Read w8 2 argv))
+        (Eq 117 (Read w8 3 argv))
+        (Eq 116 (Read w8 4 argv))
+        (Eq 112 (Read w8 5 argv))
+        (Eq 117 (Read w8 6 argv))
+        (Eq 116 (Read w8 7 argv))
+        (Eq 102 (Read w8 9 argv))
+        (Eq 105 (Read w8 10 argv))
+        (Eq 108 (Read w8 11 argv))
+        (Eq 101 (Read w8 12 argv))
+        (Eq false
+            (Eq 4096
+                N0:(And w32 (And w32 (ReadLSB w32 24 .-stat)
+                                     4294966784)
+                            61440)))
+        (Eq false
+            (Eq 4096
+                (And w32 (And w32 (ReadLSB w32 24 exp-stat)
+                                  4294966784)
+                         61440)))
+        (Eq false (Eq 24576 N0))
+        (Eq false (Eq 8192 N0))]
+       false)

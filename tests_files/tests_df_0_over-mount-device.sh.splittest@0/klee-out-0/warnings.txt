@@ -1,0 +1,19 @@
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: __xstat64
+KLEE: WARNING: undefined reference to function: bindtextdomain
+KLEE: WARNING: undefined reference to function: gettext
+KLEE: WARNING: undefined reference to function: klee_shadow_replay_standalone
+KLEE: WARNING: undefined reference to variable: program_invocation_name
+KLEE: WARNING: undefined reference to variable: program_invocation_short_name
+KLEE: WARNING: undefined reference to function: snprintf
+KLEE: WARNING: undefined reference to function: sync
+KLEE: WARNING: undefined reference to function: textdomain
+KLEE: WARNING: executable has module level assembly (ignoring)
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 57213968) at /home/shadowvm/shadow/klee-change/runtime/POSIX/fd.c:2475
+KLEE: WARNING ONCE: calling __user_main with extra arguments.
+KLEE: WARNING ONCE: calling external: __xstat64(1, 57085136, 57277360) at /usr/include/x86_64-linux-gnu/sys/stat.h:504
+KLEE: WARNING: seeds patched for violating constraint
+KLEE: WARNING ONCE: calling external: bindtextdomain(56800704, 56810144) at :0
+KLEE: WARNING ONCE: calling external: textdomain(56800704) at :0
+KLEE: WARNING ONCE: calling external: gettext(56810720) at :0
+KLEE: WARNING ONCE: calling external: __ctype_b_loc() at :0
