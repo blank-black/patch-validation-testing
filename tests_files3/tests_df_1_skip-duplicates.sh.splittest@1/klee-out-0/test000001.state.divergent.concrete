@@ -1,0 +1,21 @@
+Divergence: Found divergent behaviour on the concrete path in shadow mode
+After 0.416529s
+SE started at depth/instruction 0
+Current depth 0
+Current instructions 526417
+Current searcherdistance 0
+Current TTL 0
+Stack: 
+	#0 00001877 in filter_mount_list ()
+	#1 00004042 in get_all_entries ()
+	#2 00004883 in __user_main (argc=3, argv=56305072)
+	#3 00033262 in __uClibc_main (main=36541024, argc=3, argv=56305072, app_init=0, app_fini=0, rtld_fini=0, stack_end=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+	#4 00050341 in main (=3, =56305072)
+
+ShadowInfo:
+ExecutionMode = concolic
+OnSeedPath = 1
+OnDivergentPath = 0
+NumChanges = 4
+DiffStamp = ELSE_THEN
+
