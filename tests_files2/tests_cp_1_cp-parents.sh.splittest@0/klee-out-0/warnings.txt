@@ -1,0 +1,47 @@
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: __xstat64
+KLEE: WARNING: undefined reference to function: attr_copy_check_permissions
+KLEE: WARNING: undefined reference to function: attr_copy_fd
+KLEE: WARNING: undefined reference to function: attr_copy_file
+KLEE: WARNING: undefined reference to function: bindtextdomain
+KLEE: WARNING: undefined reference to function: fallocate
+KLEE: WARNING: undefined reference to function: fdopendir
+KLEE: WARNING: undefined reference to function: free_permission_context
+KLEE: WARNING: undefined reference to function: gettext
+KLEE: WARNING: undefined reference to function: iconv
+KLEE: WARNING: undefined reference to function: iconv_close
+KLEE: WARNING: undefined reference to function: iconv_open
+KLEE: WARNING: undefined reference to function: klee_shadow_replay_standalone
+KLEE: WARNING: undefined reference to function: linkat
+KLEE: WARNING: undefined reference to function: mkdir
+KLEE: WARNING: undefined reference to function: mkfifo
+KLEE: WARNING: undefined reference to function: mknod
+KLEE: WARNING: undefined reference to function: posix_fadvise
+KLEE: WARNING: undefined reference to variable: program_invocation_name
+KLEE: WARNING: undefined reference to variable: program_invocation_short_name
+KLEE: WARNING: undefined reference to function: rpmatch
+KLEE: WARNING: undefined reference to function: snprintf
+KLEE: WARNING: undefined reference to function: strtol
+KLEE: WARNING: undefined reference to function: textdomain
+KLEE: WARNING: undefined reference to function: utimensat
+KLEE: WARNING: executable has module level assembly (ignoring)
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 64121184) at /home/shadowvm/shadow/klee-change/runtime/POSIX/fd.c:2475
+KLEE: WARNING ONCE: calling __user_main with extra arguments.
+KLEE: WARNING ONCE: calling external: __xstat64(1, 63985792, 64185040) at /usr/include/x86_64-linux-gnu/sys/stat.h:504
+KLEE: WARNING ONCE: calling external: bindtextdomain(63621008, 63648800) at :0
+KLEE: WARNING ONCE: calling external: textdomain(63621008) at :0
+KLEE: WARNING ONCE: calling external: geteuid() at :0
+KLEE: WARNING ONCE: calling external: mkdir(66372320, (Extract w32 0 (Shadow w64 (ZExt w64 N0:(Extract w32 0 (Shadow w64 (And w64 (ZExt w64 (And w32 N1:(Xor w32 4294967295
+                                                                                                           (And w32 N2:(ReadLSB w32 24 a-stat)
+                                                                                                                    63))
+                                                                                               N2))
+                                                                            4095)
+                                                                   (ZExt w64 N2))))
+                           (And w64 (ZExt w64 (And w32 N1 N0))
+                                    4095)))) at :0
+KLEE: WARNING ONCE: calling external: printf(63638976, 66372322, 66372320) at :0
+KLEE: WARNING: __fd_getdents: getdents called on symbolic file, ignoring (EINVAL)
+KLEE: WARNING ONCE: calling external: gettext(63666624) at :0
+KLEE: WARNING ONCE: calling external: vprintf(63826816, 70915104) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/stdio/fprintf.c:35
+KLEE: WARNING ONCE: calling external: utimensat(4294967196, 66372704, 70804864, 0) at :0
+KLEE: WARNING ONCE: calling external: attr_copy_file(55478416, 66372704, 0, 0) at :0

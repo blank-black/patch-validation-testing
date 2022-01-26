@@ -1,0 +1,33 @@
+/home/shadowvm/shadow/klee-change/Release+Asserts/bin/klee -allow-external-sym-calls -posix-runtime -dump-states-on-halt --zest --shadow -emit-all-errors -no-std-out -shadow-allow-allocs -watchdog -shadow-only-symbolic-tests -max-time 1440.0 -libc uclibc -use-shadow-version product /work/data/cp/bd75118c16d8bca235b61dbb99326c043278a791/execution/ctrl/output/latest/testscases_workdir/shadow_se/cp.bc --parents --no-preserve=mode np/b/file np_dest/
+PID: 1033
+Started: 2020-01-02 16:50:34
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2020-01-02 16:50:35
+Elapsed: 00:00:01
+KLEE: done: explored paths = 1
+KLEE: done: avg. constructs per query = 118
+KLEE: done: total queries = 57
+KLEE: done: valid queries = 0
+KLEE: done: invalid queries = 57
+KLEE: done: query cex = 57
+KLEE: done: shadow expressions = 4
+KLEE: done: shadow splits = 204
+KLEE: done: klee changes = 4
+KLEE: done: fork on shadow = 0
+KLEE: done: mem op on shadow = 0
+KLEE: done: mem op read on shadow = 0
+KLEE: done: mem op write on shadow = 0
+KLEE: done: concretize shadow = 100
+KLEE: done: array update index shadow = 0
+KLEE: done: fork on constant shadow = 0
+KLEE: done: total time for shadow symbolic execution stage = 0
+KLEE: done: states generated during shadow symbolic execution stage = 0
+
+KLEE: done: total instructions = 719565
+KLEE: done: completed paths = 3
+KLEE: done: generated tests = 3

@@ -1,0 +1,44 @@
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: __xstat64
+KLEE: WARNING: undefined reference to function: attr_copy_check_permissions
+KLEE: WARNING: undefined reference to function: attr_copy_fd
+KLEE: WARNING: undefined reference to function: attr_copy_file
+KLEE: WARNING: undefined reference to function: bindtextdomain
+KLEE: WARNING: undefined reference to function: fallocate
+KLEE: WARNING: undefined reference to function: fdopendir
+KLEE: WARNING: undefined reference to function: free_permission_context
+KLEE: WARNING: undefined reference to function: gettext
+KLEE: WARNING: undefined reference to function: iconv
+KLEE: WARNING: undefined reference to function: iconv_close
+KLEE: WARNING: undefined reference to function: iconv_open
+KLEE: WARNING: undefined reference to function: klee_shadow_replay_standalone
+KLEE: WARNING: undefined reference to function: linkat
+KLEE: WARNING: undefined reference to function: mkdir
+KLEE: WARNING: undefined reference to function: mkfifo
+KLEE: WARNING: undefined reference to function: mknod
+KLEE: WARNING: undefined reference to function: posix_fadvise
+KLEE: WARNING: undefined reference to variable: program_invocation_name
+KLEE: WARNING: undefined reference to variable: program_invocation_short_name
+KLEE: WARNING: undefined reference to function: rpmatch
+KLEE: WARNING: undefined reference to function: snprintf
+KLEE: WARNING: undefined reference to function: strtol
+KLEE: WARNING: undefined reference to function: textdomain
+KLEE: WARNING: undefined reference to function: utimensat
+KLEE: WARNING: executable has module level assembly (ignoring)
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 82370384) at /home/shadowvm/shadow/klee-change/runtime/POSIX/fd.c:2475
+KLEE: WARNING ONCE: calling __user_main with extra arguments.
+KLEE: WARNING ONCE: calling external: __xstat64(1, 82235008, 82434256) at /usr/include/x86_64-linux-gnu/sys/stat.h:504
+KLEE: WARNING ONCE: calling external: bindtextdomain(81871056, 81898800) at :0
+KLEE: WARNING ONCE: calling external: textdomain(81871056) at :0
+KLEE: WARNING ONCE: calling external: geteuid() at :0
+KLEE: WARNING ONCE: calling external: mkdir(83717136, (Extract w32 0 (Shadow w64 (ZExt w64 N0:(Extract w32 0 (Shadow w64 (And w64 (ZExt w64 (And w32 N1:(Xor w32 4294967295
+                                                                                                           (And w32 N2:(ReadLSB w32 24 a-stat)
+                                                                                                                    63))
+                                                                                               N2))
+                                                                            4095)
+                                                                   (ZExt w64 N2))))
+                           (And w64 (ZExt w64 (And w32 N1 N0))
+                                    4095)))) at :0
+KLEE: WARNING ONCE: calling external: getpagesize() at :0
+KLEE: WARNING ONCE: calling external: posix_fadvise(3, 0, 0, 2) at :0
+KLEE: WARNING ONCE: calling external: free_permission_context(83672160) at :0

@@ -1,0 +1,61 @@
+array argv_1[10] : w32 -> w8 = symbolic
+array argv[3] : w32 -> w8 = symbolic
+array argv_2[8] : w32 -> w8 = symbolic
+array argv_3[2] : w32 -> w8 = symbolic
+array e/d-stat[144] : w32 -> w8 = symbolic
+array e-stat[144] : w32 -> w8 = symbolic
+array d-stat[144] : w32 -> w8 = symbolic
+(query [(Eq 0 (Read w8 2 argv))
+        (Eq 0 (Read w8 9 argv_1))
+        (Eq 0 (Read w8 7 argv_2))
+        (Eq 0 (Read w8 1 argv_3))
+        (Eq 101 (Read w8 0 argv_3))
+        (Eq 4096
+            (ReadLSB w64 56 e-stat))
+        (Eq 17308017
+            (ReadLSB w64 8 e-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e-stat))
+        (Eq 45 (Read w8 0 argv))
+        (Eq 97 (Read w8 1 argv))
+        (Eq 45 (Read w8 0 argv_1))
+        (Eq 45 (Read w8 1 argv_1))
+        (Eq 112 (Read w8 2 argv_1))
+        (Eq 97 (Read w8 3 argv_1))
+        (Eq 114 (Read w8 4 argv_1))
+        (Eq 101 (Read w8 5 argv_1))
+        (Eq 110 (Read w8 6 argv_1))
+        (Eq 116 (Read w8 7 argv_1))
+        (Eq 115 (Read w8 8 argv_1))
+        (Eq 16384
+            (And w32 (And w32 (ReadLSB w32 24 e-stat)
+                              4294966784)
+                     61440))
+        (Eq false
+            (Eq 0 N0:(Read w8 6 argv_2)))
+        (Eq 47 (Read w8 1 argv_2))
+        (Eq 47 (Read w8 3 argv_2))
+        (Eq 47 (Read w8 5 argv_2))
+        (Eq false (Eq 47 N0))
+        (Eq 100 (Read w8 0 argv_2))
+        (Eq 97 (Read w8 2 argv_2))
+        (Eq 98 (Read w8 4 argv_2))
+        (Eq 4096
+            (ReadLSB w64 56 d-stat))
+        (Eq 17308015
+            (ReadLSB w64 8 d-stat))
+        (Eq 4096
+            (ReadLSB w64 48 d-stat))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 d-stat)
+                     61440))
+        (Eq 4096
+            (ReadLSB w64 56 e/d-stat))
+        (Eq 17308088
+            (ReadLSB w64 8 e/d-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e/d-stat))
+        (Eq 448
+            (And w32 (ReadLSB w32 24 e/d-stat)
+                     448))]
+       false)

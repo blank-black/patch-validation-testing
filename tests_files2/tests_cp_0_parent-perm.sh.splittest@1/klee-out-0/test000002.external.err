@@ -1,0 +1,17 @@
+Error: failed external call: free_permission_context
+After 1.25016s
+SE started at depth/instruction 0
+Current depth 0
+Current instructions 975383
+Current searcherdistance 0
+Current TTL 0
+Stack: 
+	#0 00018929 in qcopy_acl (src_name=81097648, source_desc=3, dst_name=83310336, dest_desc=4, mode)
+	#1 00012256 in copy_acl (src_name=81097648, source_desc=3, dst_name=83310336, dest_desc=4, mode)
+	#2 00006891 in copy_reg (src_name=81097648, dst_name=83310336, x=83201408, dst_mode, omitted_permissions, new_dst=83339136, src_sb=87138256)
+	#3 00010112 in copy_internal (src_name=81097648, dst_name=83310336, new_dst=1, parent=0, ancestors=0, x=83201408, command_line_arg=1, first_dir_created_per_command_line_arg=88162208, copy_into_self=83283680, rename_succeeded=0)
+	#4 00011224 in copy (src_name=81097648, dst_name=83310336, nonexistent_dst=1, options=83201408, copy_into_self=83283680, rename_succeeded=0)
+	#5 00002163 in do_copy (n_files=2, file=82144136, target_directory=0, no_target_directory=0, x=83201408)
+	#6 00003266 in __user_main (argc=5, argv=70558192)
+	#7 00035271 in __uClibc_main (main=52693200, argc=5, argv=70558192, app_init=0, app_fini=0, rtld_fini=0, stack_end=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+	#8 00052008 in main (=5, =70558192)

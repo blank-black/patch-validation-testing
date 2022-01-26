@@ -1,0 +1,57 @@
+array argv_1[9] : w32 -> w8 = symbolic
+array a/b/c/foo-stat[144] : w32 -> w8 = symbolic
+array argv_2[10] : w32 -> w8 = symbolic
+array argv[3] : w32 -> w8 = symbolic
+array argv_3[2] : w32 -> w8 = symbolic
+array e-stat[144] : w32 -> w8 = symbolic
+array a-stat[144] : w32 -> w8 = symbolic
+(query [(Eq 0 (Read w8 2 argv))
+        (Eq 0 (Read w8 8 argv_1))
+        (Eq 0 (Read w8 9 argv_2))
+        (Eq 97 (Read w8 0 argv_2))
+        (Eq 47 (Read w8 1 argv_2))
+        (Eq 98 (Read w8 2 argv_2))
+        (Eq 47 (Read w8 3 argv_2))
+        (Eq 99 (Read w8 4 argv_2))
+        (Eq 47 (Read w8 5 argv_2))
+        (Eq 102 (Read w8 6 argv_2))
+        (Eq 111 (Read w8 7 argv_2))
+        (Eq 111 (Read w8 8 argv_2))
+        (Eq 4096
+            (ReadLSB w64 56 a/b/c/foo-stat))
+        (Eq 17308017
+            (ReadLSB w64 8 a/b/c/foo-stat))
+        (Eq 0
+            (ReadLSB w64 48 a/b/c/foo-stat))
+        (Eq 0 (Read w8 1 argv_3))
+        (Eq 101 (Read w8 0 argv_3))
+        (Eq 4096
+            (ReadLSB w64 56 e-stat))
+        (Eq 17308015
+            (ReadLSB w64 8 e-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e-stat))
+        (Eq 45 (Read w8 0 argv))
+        (Eq 112 (Read w8 1 argv))
+        (Eq 45 (Read w8 0 argv_1))
+        (Eq 45 (Read w8 1 argv_1))
+        (Eq 112 (Read w8 2 argv_1))
+        (Eq 97 (Read w8 3 argv_1))
+        (Eq 114 (Read w8 4 argv_1))
+        (Eq 101 (Read w8 5 argv_1))
+        (Eq 110 (Read w8 6 argv_1))
+        (Eq 116 (Read w8 7 argv_1))
+        (Eq 16384
+            (And w32 (And w32 (ReadLSB w32 24 e-stat)
+                              4294966784)
+                     61440))
+        (Eq 4096
+            (ReadLSB w64 56 a-stat))
+        (Eq 17308007
+            (ReadLSB w64 8 a-stat))
+        (Eq 4096
+            (ReadLSB w64 48 a-stat))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 a-stat)
+                     61440))]
+       false)

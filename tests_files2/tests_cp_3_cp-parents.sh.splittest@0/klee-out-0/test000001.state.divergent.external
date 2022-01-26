@@ -1,0 +1,21 @@
+Divergence: Speculative divergence on external call
+After 0.220171s
+SE started at depth/instruction 0
+Current depth 0
+Current instructions 299763
+Current searcherdistance 0
+Current TTL 0
+Stack: 
+	#0 00001538 in make_dir_parents_private (const_dir=55330512, src_offset=2, verbose_fmt_string=0, attr_list=54212320, new_dst=54333984, x=55225952)
+	#1 00002095 in do_copy (n_files=2, file=54038568, target_directory=0, no_target_directory=0, x=55225952)
+	#2 00003266 in __user_main (argc=5, argv=42735696)
+	#3 00035271 in __uClibc_main (main=24750288, argc=5, argv=42735696, app_init=0, app_fini=0, rtld_fini=0, stack_end=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+	#4 00052008 in main (=5, =42735696)
+
+ShadowInfo:
+ExecutionMode = concolic
+OnSeedPath = 1
+OnDivergentPath = 0
+NumChanges = 2
+DiffStamp = IRRELEVANT
+

@@ -1,0 +1,129 @@
+array argv_1[9] : w32 -> w8 = symbolic
+array argv_3[2] : w32 -> w8 = symbolic
+array a/b/d/foo-stat[144] : w32 -> w8 = symbolic
+array argv_2[10] : w32 -> w8 = symbolic
+array argv[3] : w32 -> w8 = symbolic
+array e-stat[144] : w32 -> w8 = symbolic
+array e/a-stat[144] : w32 -> w8 = symbolic
+array a-stat[144] : w32 -> w8 = symbolic
+array e/a/b-stat[144] : w32 -> w8 = symbolic
+array a/b-stat[144] : w32 -> w8 = symbolic
+array a/b/d-stat[144] : w32 -> w8 = symbolic
+array e/a/b/d-stat[144] : w32 -> w8 = symbolic
+(query [(Eq 0 (Read w8 2 argv))
+        (Eq 0 (Read w8 8 argv_1))
+        (Eq 0 (Read w8 9 argv_2))
+        (Eq 97 (Read w8 0 argv_2))
+        (Eq 47 (Read w8 1 argv_2))
+        (Eq 98 (Read w8 2 argv_2))
+        (Eq 47 (Read w8 3 argv_2))
+        (Eq 100 (Read w8 4 argv_2))
+        (Eq 47 (Read w8 5 argv_2))
+        (Eq 102 (Read w8 6 argv_2))
+        (Eq 111 (Read w8 7 argv_2))
+        (Eq 111 (Read w8 8 argv_2))
+        (Eq 4096
+            (ReadLSB w64 56 a/b/d/foo-stat))
+        (Eq 17308021
+            (ReadLSB w64 8 a/b/d/foo-stat))
+        (Eq 0
+            (ReadLSB w64 48 a/b/d/foo-stat))
+        (Eq 0 (Read w8 1 argv_3))
+        (Eq 101 (Read w8 0 argv_3))
+        (Eq 4096
+            (ReadLSB w64 56 e-stat))
+        (Eq 17308017
+            (ReadLSB w64 8 e-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e-stat))
+        (Eq 45 (Read w8 0 argv))
+        (Eq 112 (Read w8 1 argv))
+        (Eq 45 (Read w8 0 argv_1))
+        (Eq 45 (Read w8 1 argv_1))
+        (Eq 112 (Read w8 2 argv_1))
+        (Eq 97 (Read w8 3 argv_1))
+        (Eq 114 (Read w8 4 argv_1))
+        (Eq 101 (Read w8 5 argv_1))
+        (Eq 110 (Read w8 6 argv_1))
+        (Eq 116 (Read w8 7 argv_1))
+        (Eq 16384
+            (And w32 (And w32 (ReadLSB w32 24 e-stat)
+                              4294966784)
+                     61440))
+        (Eq 4096
+            (ReadLSB w64 56 e/a-stat))
+        (Eq 17308119
+            (ReadLSB w64 8 e/a-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e/a-stat))
+        (Eq 4096
+            (ReadLSB w64 56 a-stat))
+        (Eq 17308009
+            (ReadLSB w64 8 a-stat))
+        (Eq 4096
+            (ReadLSB w64 48 a-stat))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 a-stat)
+                     61440))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 e/a-stat)
+                     61440))
+        (Eq 4096
+            (ReadLSB w64 56 e/a/b-stat))
+        (Eq 17308123
+            (ReadLSB w64 8 e/a/b-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e/a/b-stat))
+        (Eq 4096
+            (ReadLSB w64 56 a/b-stat))
+        (Eq 17308011
+            (ReadLSB w64 8 a/b-stat))
+        (Eq 4096
+            (ReadLSB w64 48 a/b-stat))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 a/b-stat)
+                     61440))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 e/a/b-stat)
+                     61440))
+        (Eq 4096
+            (ReadLSB w64 56 a/b/d-stat))
+        (Eq 17308015
+            (ReadLSB w64 8 a/b/d-stat))
+        (Eq 4096
+            (ReadLSB w64 48 a/b/d-stat))
+        (Eq 16384
+            (And w32 (ReadLSB w32 24 a/b/d-stat)
+                     61440))
+        (Eq 4096
+            (ReadLSB w64 56 e/a/b/d-stat))
+        (Eq 17308146
+            (ReadLSB w64 8 e/a/b/d-stat))
+        (Eq 4096
+            (ReadLSB w64 48 e/a/b/d-stat))
+        (Eq 448
+            (And w32 (ReadLSB w32 24 e/a/b/d-stat)
+                     448))
+        (Eq 32768
+            (And w32 N0:(And w32 (ReadLSB w32 24 a/b/d/foo-stat)
+                                 4294966784)
+                     61440))
+        (Eq 32768
+            (And w32 (And w32 N0 4294966784) 61440))
+        (Eq false
+            (Eq 1073741823
+                N1:(ReadLSB w64 80 a/b/d/foo-stat)))
+        (Eq false (Eq 1073741822 N1))
+        (Eq false (Slt N1 0))
+        (Eq false (Slt 999999999 N1))
+        (Eq false
+            (Eq 1073741823
+                N2:(ReadLSB w64 96 a/b/d/foo-stat)))
+        (Eq false (Eq 1073741822 N2))
+        (Eq false (Slt N2 0))
+        (Eq false (Slt 999999999 N2))
+        (Eq 1000
+            (ReadLSB w32 28 a/b/d/foo-stat))
+        (Eq 1000
+            (ReadLSB w32 32 a/b/d/foo-stat))]
+       false)

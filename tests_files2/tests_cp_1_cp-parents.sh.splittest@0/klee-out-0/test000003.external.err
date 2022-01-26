@@ -1,0 +1,15 @@
+Error: failed external call: attr_copy_file
+After 2.49217s
+SE started at depth/instruction 0
+Current depth 0
+Current instructions 867142
+Current searcherdistance 0
+Current TTL 0
+Stack: 
+	#0 00004915 in copy_attr (src_path=55478416, src_fd=4294967295, dst_path=66372704, dst_fd=4294967295, x=65350896)
+	#1 00010613 in copy_internal (src_name=55478416, dst_name=66372704, new_dst=1, parent=0, ancestors=0, x=65350896, command_line_arg=1, first_dir_created_per_command_line_arg=66304688, copy_into_self=66297264, rename_succeeded=0)
+	#2 00011224 in copy (src_name=55478416, dst_name=66372704, nonexistent_dst=1, options=65350896, copy_into_self=66297264, rename_succeeded=0)
+	#3 00002163 in do_copy (n_files=2, file=64284560, target_directory=0, no_target_directory=0, x=65350896)
+	#4 00003266 in __user_main (argc=6, argv=48301120)
+	#5 00035271 in __uClibc_main (main=34834672, argc=6, argv=48301120, app_init=0, app_fini=0, rtld_fini=0, stack_end=0) at /home/shadowvm/shadow/kleeDeploy/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+	#6 00052008 in main (=6, =48301120)
