@@ -50,4 +50,19 @@ def convert(path, program, test_dir, result):
         print(e)
 
 
-convert('.', 'df', 'tests_files', 'tests_files_convert') 
+def main():
+    parser = argparse.ArgumentParser(add_help=True, usage="")
+    parser.add_argument("--issue", dest='issue',
+                        default=0)
+    args = parser.parse_args()
+    issue = args.issue
+    if issue == 0:
+        convert('.', 'df', 'tests_files', 'tests_files_convert')
+    elif issue == 1:
+        convert('.', 'cp', 'tests_files1', 'tests_files_convert1')
+    elif issue == 2:
+        convert('.', 'df', 'tests_files2', 'tests_files_convert2')
+
+
+if __name__ == "__main__":
+    main()
