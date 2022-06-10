@@ -1,0 +1,18 @@
+klee-semu --allow-external-sym-calls --semu-no-error-on-memory-limit --solver-backend z3 --max-memory 2048 --max-time 3600 --libc uclibc --search bfs --semu-precondition-length 0 --semu-checkpoint-window 1000 --semu-propagation-proportion 1 --semu-minimum-propagation-depth 1 --semu-number-of-tests-per-mutant 5 -semu-quiet semu_combine_apr.bc
+PID: 2519783
+Started: 2021-12-19 13:19:56
+BEGIN searcher description
+BFSSearcher
+END searcher description
+Finished: 2021-12-19 13:19:56
+Elapsed: 00:00:00
+KLEE: done: explored paths = 131
+KLEE: done: avg. constructs per query = 6
+KLEE: done: total queries = 31
+KLEE: done: valid queries = 0
+KLEE: done: invalid queries = 31
+KLEE: done: query cex = 31
+
+KLEE: done: total instructions = 18038
+KLEE: done: completed paths = 132
+KLEE: done: generated tests = 5

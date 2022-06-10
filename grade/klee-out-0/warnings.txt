@@ -1,0 +1,11 @@
+KLEE: WARNING: undefined reference to function: fcntl
+KLEE: WARNING: undefined reference to function: fstat
+KLEE: WARNING: undefined reference to function: ioctl
+KLEE: WARNING: undefined reference to function: klee_semu_GenMu_Mutant_ID_Selector_Func
+KLEE: WARNING: undefined reference to function: klee_semu_GenMu_Post_Mutation_Point_Func
+KLEE: WARNING: undefined reference to function: open
+KLEE: WARNING: undefined reference to function: write
+KLEE: WARNING ONCE: calling external: ioctl(0, 21505, 94119431940880)
+KLEE: WARNING ONCE: calling __user_main with extra arguments.
+KLEE: WARNING ONCE: calling external: printf(94119446025136)
+KLEE: WARNING ONCE: silently concretizing (reason: floating point) expression (ReadLSB w32 0 percent) to value 0 (/data/grade/317aa7055d3b7337ab43b73863692d1288ca246c473f9fd176bc737a7c3e1e08c37a15603cfb7bfc86f7bc2dcc239967b79b605aec11f86ae3ab90dc140b540f/004/semu_combine_student.c:25)
